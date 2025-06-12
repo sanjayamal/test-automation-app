@@ -12,6 +12,8 @@ import {
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import { useNavigate } from "react-router";
+import Logo from "@/components/shared/LogoWithName";
+import SocialMediaLinks from "@/components/shared/SocialMediaLinks";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
@@ -97,13 +99,14 @@ const SignIn = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
-      <div className="w-full max-w-md space-y-8">
-        <Card className="shadow-lg">
+      <div className="w-full max-w-md space-y-8 flex flex-col">
+        <Card className="rounded-2xl shadow-lg border-2 border-blue-200">
           <CardHeader className="space-y-1 text-center">
             <CardTitle className="tracking-tight">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Learn Test Automation
-              </h1>
+              {/* <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Learn Test Automation සිංහලෙන්
+              </h1> */}
+              <Logo name="Learn Test Automation සිංහලෙන්" className="mb-6" />
             </CardTitle>
             <CardDescription className="text-gray-600">
               Enter your credentials to access your account
@@ -119,7 +122,7 @@ const SignIn = () => {
                 <div className="relative">
                   <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                   <Input
-                    id="email"
+                    id="username"
                     name="email"
                     autoComplete="email"
                     className={`pl-10 ${
@@ -189,6 +192,18 @@ const SignIn = () => {
             </form>
           </CardContent>
         </Card>
+         <SocialMediaLinks  className="mt-6" />
+        <p className="text-center text-gray-500 text-sm mt-3">
+          By signing in, you agree to our{" "}
+          <a
+            href="https://example.com/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            Privacy Policy
+          </a>
+        </p>
       </div>
     </div>
   );

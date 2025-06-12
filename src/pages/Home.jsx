@@ -19,7 +19,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useNavigate } from "react-router";
 
 export default function LandingPage() {
@@ -27,11 +27,11 @@ export default function LandingPage() {
   const navigate = useNavigate();
   const isSignIn = !!localStorage.getItem("IsSignIn");
 
-  useEffect(() => {
-    if (!isSignIn) {
-      navigate("/login");
-    }
-  }, [isSignIn]);
+  // useEffect(() => {
+  //   if (!isSignIn) {
+  //     navigate("/login");
+  //   }
+  // }, [isSignIn]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
